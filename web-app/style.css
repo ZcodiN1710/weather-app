@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?cs=srgb&dl=pexels-pixabay-209831.jpg&fm=jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#appContainer {
+  background-color: rgb(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.headline {
+  width: 100%;
+  background-color: rgb(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 5px;
+}
+.inputsAndEntries {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.inputsSection {
+  box-shadow: 2px 2px 3px black;
+  padding: 5px 8px;
+  background-color: rgb(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+.feelingHolder {
+  margin-top: 15px;
+}
+.zipHolder input {
+  font-size: 1em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.feelingHolder textarea {
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.zipHolder input,
+.feelingHolder textarea {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: rgb(255, 255, 255, 0.1);
+  box-shadow: 2px 2px 3px black;
+  color: white;
+}
+::placeholder {
+  color: rgb(56, 65, 73);
+}
+.btn {
+  text-align: center;
+}
+button {
+  all: unset;
+  margin-top: 5px;
+  background-color: rgb(255, 255, 255, 0.1);
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+button:hover {
+  transform: scale(1.1);
+}
+.entriesSection {
+  box-shadow: 2px 2px 3px black;
+  padding: 5px 10px;
+  background-color: rgb(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+#entryHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 5px;
+}
+.title {
+  margin-bottom: 5px;
+}
+#entryHolder div {
+    background-color: rgb(255, 255, 255, 0.1);
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: -2px 2px 3px black;
+}
+small {
+  font-weight: bold;
+  background-color: rgb(255, 255, 255, .3);
+  padding: 2px;
+  border-radius: 4px;
+  letter-spacing: 1.5px;
+}
+#entryHolder div p {
+  line-height: 25px;
+}
+

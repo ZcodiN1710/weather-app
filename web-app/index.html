@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather Journal</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./icons/style.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <p id="project"></p>
+    <div id="appContainer">
+      <div class="headline">
+        <h1>Weather Journal App</h1>
+      </div>
+      <div class="inputsAndEntries">
+        <div class="inputsSection">
+          <div class="zipHolder">
+            <label for="zip">Enter Zipcode here</label> <br />
+            <input type="text" id="zip" placeholder="Enter zip code here"/>
+          </div>
+          <div class="feelingHolder">
+            <label for="feelings">How are you feeling today?</label> <br />
+            <textarea
+              class="myInput"
+              id="feelings"
+              placeholder="Enter your feelings here"
+              rows="5"
+              cols="30"
+            ></textarea>
+          </div>
+          <div class="btn">
+            <button id="generate" type="submit">Generate</button>
+          </div>
+        </div>
+        <div class="entriesSection">
+          <div class="title">Most Recent Entry</div>
+          <div id="entryHolder">
+            <div id="date" style="margin-top:0">
+              <i class="icon-calendar"></i>
+              <p>..........</p>
+              <small>Date</small>
+            </div>
+            <div id="temp">
+              <i class="icon-thermometer-2"></i>
+              <p>.......</p>
+              <small>Temperature</small>
+            </div>
+            <!-- <div id="weather">
+              <p>snow</p>
+              <i>icon</i>
+            </div> -->
+            <div id="content">..........</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
