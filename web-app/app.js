@@ -68,7 +68,7 @@ const updateUI =  async () => {
     const dateEl = document.querySelector("#date p").innerHTML =
     allData.date;
     const tempEl = document.querySelector("#temp p").innerHTML =
-    allData.temperature + ' degrees';
+    Math.round(allData.temperature ) + ' degrees';
     const contentEl = document.querySelector("#content").innerHTML =
     allData.feeling
   } catch (error) {}
