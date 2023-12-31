@@ -1,32 +1,27 @@
-let projectData = [];
+let projectData = {}
 const express = require("express");
 const cors = require("cors");
 const app = express();
 
-const corsOptions = {
-  origin: "http://127.0.0.1:3000/addData",
-  optionsSuccessStatus: 200,
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use(express.static("web-app"))
 
 app.get("/all", (req, res) => {
   res.send(projectData);
 });
 
-app.post("/addData", (req, res) => {
-  const allData = req.body;
-  const newData = {
-    temperature:allData.temp,
-    date:allData.currentDate,
-    feeling:allData.userResponse
-  }
-  projectData.push(newData)
-  res.send("Data recieved successfully")
-});
+app.post("/addData", addData)
+function addData(req, res){
+  projectData["temperature"]= req.body.temperature,
+  projectData["date"]= req.body.date,
+  projectData["feeling"]= req.body.feeling
+  res.send(projectData)
+}
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

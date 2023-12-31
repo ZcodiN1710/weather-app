@@ -1,10 +1,12 @@
+// const preferredUnit = true
+// const units = preferredUnit ? 'imperial' : 'metric'
+const preferredUnit = "imperial"
+const apiKey = `&appid=576c33c43d66e9e66d770b967c83cc76&units=${preferredUnit}`;
 const generateBtn = document.getElementById("generate");
 const zipInput = document.getElementById("zip");
-const baseUrl = `http://api.openweathermap.org/data/2.5/forecast?zip=`;
-const apiKey = "&appid=576c33c43d66e9e66d770b967c83cc76&units=imperial";
 
 
-// =============get the api============================
+//=============get the api============================
 const getApiData = async (fullApiUrl) => {
   let zipCode = zipInput.value
   fullApiUrl =`http://api.openweathermap.org/data/2.5/forecast?zip=${zipCode}${apiKey}`
@@ -17,7 +19,7 @@ const getApiData = async (fullApiUrl) => {
     console.log("error", error);
   }
 };
-// =================Post request============================
+//=================Post request============================
 const postData = async (url = "", data = {}) => {
   console.log(data);
   const response = await fetch(url, {
@@ -56,21 +58,20 @@ const performActions = () => {
     });
     updateUI(currentDate,temp,userResponse)
   });
-  
 };
 //==================update the UI==========================
-const updateUI =  (date,temperature,feeling) => {
-  // const request = await fetch("/all");
-  // try {
-    // const allData = await request.json();
-    // console.log(allData);
+const updateUI =  async () => {
+  const request = await fetch("/all");
+  try {
+    const allData = await request.json();
+    console.log(allData);
     const dateEl = document.querySelector("#date p").innerHTML =
-      date;
+    allData.date;
     const tempEl = document.querySelector("#temp p").innerHTML =
-    temperature;
+    allData.temperature + ' degrees';
     const contentEl = document.querySelector("#content").innerHTML =
-      feeling
-  // } catch (error) {}
+    allData.feeling
+  } catch (error) {}
 };
 //  ==========listen to click generate button===========================
 generateBtn.addEventListener("click", performActions);
