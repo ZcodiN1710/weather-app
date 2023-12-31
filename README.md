@@ -30,7 +30,7 @@ Before you begin, ensure you have the following:
         npm install
     3.Start the server:
         npm start
-    4.Open your browser and go to http://127.0.0.1:3000/weather-app/web-app/index.html to use the Weather-Journal App.
+    4.Open your browser and go to http://localhost:3000 to use the Weather-Journal App.
 
 ## Usage
 
